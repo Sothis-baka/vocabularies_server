@@ -45,7 +45,7 @@ module.exports = {
 
                 return {
                     success: true,
-                    message: `Created book "${bookTitle}, inserted word ${content} into list 1`
+                    message: `Created book ${bookTitle}, inserted word ${content} into list 1`
                 };
             }
 
