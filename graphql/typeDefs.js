@@ -19,7 +19,9 @@ module.exports = gql`
     }
     
     type Query{
+        "Get an array of all books in database."
         getBooks: [Book]!
+        "Get a list with giving list id."
         getList(listId: String): List
     }
     
@@ -30,6 +32,7 @@ module.exports = gql`
         listIndex: Int!
     }
     
+    "Each line input should be seperated by ';', word and description shoule be seperated by ','."
     input ListInput{
         content: String!
         bookTitle: String!
@@ -41,7 +44,9 @@ module.exports = gql`
     }
     
     type Mutation{
+        "Insert a word. If book/list doesn't not exist but looks resonable, create it."
         addWord(wordInput: WordInput!): addWordResponse!
+        "Create a list. Then push the list to the book."
         addList(listInput: ListInput!): Boolean!
     }
 `;
